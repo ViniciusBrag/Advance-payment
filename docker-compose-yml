@@ -1,0 +1,16 @@
+ersion: "3.3"
+
+services:
+  database:
+    container_name: database-payment
+    image: postgres
+    restart: always
+    volumes:
+      - ./.pgdata:/var/lib/postgresql/data
+    environment:
+      - LC_ALL=C.UTF-8
+      - POSTGRES_PASSWORD=forcodevance
+      - POSTGRES_USER=forcodevance
+      - POSTGRES_DB=dbpayment
+    ports:
+      - 5433:5432
