@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     'django_extensions',
+    'core.base',
+    'core.payment',
 ]
 
 MIDDLEWARE = [
