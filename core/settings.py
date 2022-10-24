@@ -15,6 +15,7 @@ from pathlib import Path
 
 import dj_database_url
 from decouple import Csv, config
+from django.urls import reverse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +32,11 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+LOGIN_REDIRECT_URL = '/payments'
 
+AUTHENTICATION_BACKENDS = [
+    'core.base.auth.Email_OR_Username'
+]
 # Application definition
 
 INSTALLED_APPS = [

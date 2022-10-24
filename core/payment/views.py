@@ -1,6 +1,8 @@
-from django.http import HttpResponse
+
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 
+@login_required
 def payment(request):
-    return HttpResponse('ola') 
+    return render(request, 'payment/payment.html')
