@@ -15,7 +15,6 @@ class Payment(models.Model):
     payment_ammount = models.DecimalField(max_digits=8, decimal_places=4)
     provider = models.ForeignKey(User, on_delete=models.PROTECT, null=False)
     company = models.CharField(max_length=20)
-    new_value_payment = models.DecimalField(max_digits=8, decimal_places=4, editable=False)
 
 
 
